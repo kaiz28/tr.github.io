@@ -1,0 +1,1439 @@
+'use strict';
+/** @type {!Array} */
+var _0xaffc = ["exports", "TSsyjUxFkcnZ8p6HihCvFfry2xtvcxcpfu", "devCommission", "", "uint256", "view", "function", "totalPayout", "commissionDivisor", "totalInvested", "address", "players", "trxDeposit", "time", "interestProfit", "affRewards", "payoutSum", "affFrom", "aff1sum", "aff2sum", "aff3sum", "aff4sum", "aff5sum", "aff6sum", "aff7sum", "aff8sum", "totalPlayers", "nonpayable", "constructor", "payable", "fallback", "_affAddr", "deposit", "withdraw", "reinvest", "_addr", "getProfit", "static/media/TronLogo.png", 
+"Referral Status", "Copied to Clipboard", "Copy", "Tier1", "Tier2", "Tier3", "Tier4", "Tier5", "Tier6", "Tier7", "Tier8", "Referrals", "You need to invest at least 50 TRX to active your referral link.", " and ", "hours", "minutes", "Coming Soon!", "Please login to your wallet!", "Your Dividends is less than 50 TRX", "Minimum deposit is 50 TRX", "Insufficient withdrawable balance", "Your TRX Balance is not to enough to pay gas fee", "Insufficient Unfreezing Amount", "Wrong Invitation Code", "You need a few(2-5) TRX in your wallet to make an transaction", 
+"Minimum 1 star per Transaction", "Transaction send, please allow up to 40s for confirmation.", "Transaction Confirmed!", "Transaction failed, please send the transaction again.", "Please login to your Tronlink wallet", " just staked ", "Insufficient Unstaked Amount", "Insufficient TRX Balance", "Invalid Buy Amount", "Sell Amount cannot be less than 1 GOLD", "Insufficient Dividends", "Insufficient Profit", "User Declinded Transaction", "Network Error", "Compound success", "Withdraw success", "Invest success", 
+"About", "Tron Profits - It is an open source ROI Game that is 100% transparent and fair to all the players. This is a smart contract on the Tron Blockchain. Please consider this as a gambling and invest only the TRX that you can afford to lose. All you have to do is deposit and withdraw your profits. You get profits every second until there is money in the contract. Invest more TRX to earn more profits. You can refer people to this smart contract and earn referral commission up to 8 levels. ", "Invested", 
+"Total referral commission", "THU July 09 2020 15:30:00 UTC", "Daily Interest", "Referral Commission", "Within 3 to 4 days, you will get back your Investment...", "Reinvest  your dividends and earn more...", "Telegram", "Dividends Compound calculator", "Twitter", "Members", "Day", "Investors", "Total Investors: ", "Verified Contract", "View Open Source Code", "Release Date: ", "Fully Verified and Open Source Smart Contract", "Your Investments", "Invest Amount", " Period: \u221e", " Updates every single second", 
+" Monthly profit: 810%", "Invest", "Reinvest", "Your Wallet Balance:", "Dividends", "Available to withdraw", "1-3 TRX transaction fee will be applied", "Total Payout (Referral Commission Included): ", "You can withdraw them even every minute. Minimum deposit is 50 TRX.", "Withdraw", "Referral", "Total Referral Commission: ", "You need to invest at least 50 TRX to activate the referral link.", "Referral commission will be transfered to your wallet directly.", "static/media/Logo.png", "data:image/png;base64,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", 
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAArCAIAAABHOBkQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcyNTA5QTYxMEQwRTExRTZBNjQxRTExMjExQzg1ODU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjcyNTA5QTYyMEQwRTExRTZBNjQxRTExMjExQzg1ODU1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzI1MDlBNUYwRDBFMTFFNkE2NDFFMTEyMTFDODU4NTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzI1MDlBNjAwRDBFMTFFNkE2NDFFMTEyMTFDODU4NTUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6+zvr/AAAAcklEQVR42uzWSw2AUAwF0ZbwWWAADSyQgQfM4AUxb4cGbJCwKTommXFw0jS5WVVBLgUIECBAgAABAgSAAcfZ2IDYLjSgj3lAA7qAJ0CAAAECBMCnRE5swP7d7DX6rAv7Am+OPrEAAQIECBAgQAC0X4ABAC9AMNHyEuSpAAAAAElFTkSuQmCCMTAyNg==", 
+"data:image/png;base64,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", 
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAArCAIAAABHOBkQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRGRTFGQzcyMEQxRTExRTY4ODAyRUM0Q0I3OUUwQUMzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRGRTFGQzczMEQxRTExRTY4ODAyRUM0Q0I3OUUwQUMzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REZFMUZDNzAwRDFFMTFFNjg4MDJFQzRDQjc5RTBBQzMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REZFMUZDNzEwRDFFMTFFNjg4MDJFQzRDQjc5RTBBQzMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5CGIEmAAAD1UlEQVR42uyYy28bRRzHfzOzD7/Wie3EdtIkdkwSkTRt0iRSlJKKJqhCnJBAiAM3JLhx4QQ3uCP+A269IIGQECFItEhBrVFJBQ1NaVqTuCHOy0lsK2t7nzPDxs0BboYgY4sdzUr7mFnNZ3+v76yQ9vdBKzcMLd5cABfABXABXIAzNYFqqLUBwjNaSwMgvtziLgTGWfBrnbViEKOTqZxBXsVAaq9B/5UF/v7SOce6JaiGvF8Rf9oOzQ/kFYF5RMvpzrPmBkBQNaStY6+qiUS3pLLu14Dl9PskFG4zvQJPRhyLsCYGwHBoeDJfIfEhOgoIeMOrTVd+vNVujVF6iKovku450YMN4E0YA46Li+C4e7ytIoWMrIEqPqM6bnFcKE0w1TIfW6S7s+yRTZBqIxuXRm/VtXpG0c1vBUzghWsWeGHpLlnelAUdhQ71ShsIfnZlmA8PQ7mAbtwQB1J09BIFu5lciAL/nVoEgWGg1et+lseeLGKbHM+/3HdpjCq7WpewVV732Ytrquk3YLS5YoCDgGBwcp5yG8P3W4v+LY9u9uo9m3Lb+UlPcgZ+Xs+pHeJoLKosnp97rVO8ByzTXDGAZAjHXpXJS1YVEQ8tDsv58YAaAIEgdlDyFagSVhAxWBUFg2/7lPGT4tBEFhBhY0nK3vsECE0Xg+YRqDy0pyu9PLu3komNjJjtomLTfMaf/05SfR9qfDt8jXSkGhEG9VmAwHGOkok3yOzrz1xVcZTF8uX+uyyT7PlI969++bU9mSj45M4hs+sCD7zy3rE8YZVYY6Q6+eDNOkYxCPXD3sP24jcPUjMbBwSJx/Y5c/uOPb31bF9sdWWwuKD/tiTt3/ZiNfMF67/4ZGg6h1jzuJAMa5/jQt6feCvaPXRz5VeK44BlcnUnnUxvTkWzzK6IVWA7fOgdabd3Kvtpti+Cuib4mZTivwlgQOoKpeFZRlVmAndyKkOUknhXKSEXZL93JxLpqFQ5WGBx+cLlgeByJJh2rprGAgyUGGi5jy2L4hSAjRwd6hzURhUpIWm52AZYDAsRZLPK0dq7/YHHUhCaqZARuL/bf/2Xy05JjirGyMXN2yVsMMWMTZl4xH50x6dlRKINzukL67MLj0bC3oH3lc/afZUG6Lp6C1lA1GZ795164AEtOUbb4vqBltwVO3aK2cT0uVjxSVfPvq+Dx9dLz/cdeYQydkK4IZKuPi30NN+SU1Fx8l2FU9c63ccINYehtZOnd2xoDIDgZJh/XjnIX235Z3NKjVKjD56LtvamvvCDt7UBiJe3NID7b9QFcAFcABfg/w3whwADALA9jy2I9PhSAAAAAElFTkSuQmCCMTg5Mw==", 
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAlCAIAAAB9MnhgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI2OENDNEUwMEM3QjExRTZCNEVBRTBFNjc1ODc4NDY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI2OENDNEUxMEM3QjExRTZCNEVBRTBFNjc1ODc4NDY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjY4Q0M0REUwQzdCMTFFNkI0RUFFMEU2NzU4Nzg0NjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjY4Q0M0REYwQzdCMTFFNkI0RUFFMEU2NzU4Nzg0NjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4FdN4MAAAEZklEQVR42uxXO28USRCefkzP7Ozzdr2sgeBOAglOZKQkJAiRkqP7CxdYBPwBAn7EiYiYwEIEvotOJEiIgIAVssFmWbNe29jeeffjvp5Znw7dZWcHI81otZquqa+qvuqpqh5y5bfbTpUv6lT8qgnUBGoCNYGawP+6uHGM0ooQgoU22hiH2ntSSPBIW5akXBJjNHQIocQpEUtI8Xgp+RcEGqpY0FOIlf3TyPcQBwZPIeQ0MBjRdAkpAjPaMQ6njF9qjn75+X6sUlIYynQG8x2vnakMj1OV48ZnnstcYKATy1QZ2RHtcokQwzykhLVFM1c5pUxpGeVxgzdcxpVRUIA803lbtBBGEZ9JZGqI0xXWC8KSBpDE557HhC50pFaLPOr73XKJf7gDqu/3SggMQr6+9TvHQjC369mAqEOgsbOYIrKB34N7n/mB628dfUZ8jDBgWm6QqmwW7w8bfSSGEdoRP2EJ4YXGAIQDxMG9yeKroBwx5Vr2vA7+d8NZz/+h3IWe6MyTgzBPLrVGoAf9gPufF7ucsI5oxSrpeV3IZ/FB2w045VLLYTD4Gu3FlsMQ9FzKLwSD9a0/yMb2n1e6P0IpzCOfC2x0JJE/H5uVqMRjHhKG4EAjUxLpc6mbqBS0sS3QBHkQK7AeyJSJLCEwgtQieYKKYmOdBgckEdRllIZ5DOPYZBiBKcfubRLwBvKIcD3mZlrCDiAI2r4qVtNi3WWoPmIYH27Zd7TaRXx+ptVsFr18iZvGnTt8dbVKbVQfHJw8e4ZqTd++TV6/JpRiqebzahAwcby3tpa+eUMaDZOmJklIEIDJfG1NR1EFCITr63qxYCsrtNMpxoamrRbr93Uch8+fV6AGsvFYXLuWf/pkZ4TrOsWQwlJcv56PxxXYAffqVbwzej7PNzfZYICtkDs7KGgaBHh05u7Ovo3qb9+Onz5FAUQbG/7Nm0ap7N07/9YtJ8/bDx7gXTrrmjuHS+7uqpOT+aNHHwYD/PYePlTHxxCeh69zmQNsNEL/Ce7ezScTZKh57x6KgY5G5+Gr+pM4evFC3LiBU6oOQ+J5aBpIHhqf3R60cNc1UiKLKEHIC8oEN8T38Qh9nQjxN8QWQBx/B8lz24UotRAh8LMKnBcn0oS220sIjEiJaqHNpoUAzvl/Q+CF0mWoxmTv35PNy5dXHj+GCArFQVuZKGLDIeaRw5ijlM4yjFI0FgcEGIMDa6jbtXEDAk8YT1LSft+OreK0bh247hJSHujDsAwX9smpETQoeFlCkAvGSLNpmcAsperw0Fa8/XYozu2IG5LVVRuYtahB8vDJE/braMQvXrQiGI0iRIaZr/f3baxJUo4hiaae2/O3KVIOj2iRtsfDWRxDQR8dyemUep5BIopEqi9fELT1ulhYCKXy40csLW14aTbxVE4mNpHgAP6tlppOYcemfLGgnCM1cnsbBOxnFCTtNv4tpOCv05T1evGrVwSjpbpFQMpJTOqP+ppATaAmUBOoCVT1+kuAAQDug5vOtH6qYwAAAABJRU5ErkJggjIwMzg=", 
+"use strict", "r", "n", "TMsoX61QzrCx5DLZPNeDG2mZ8v88tECyVu", "tronweb", "roi", "abi", "contract", "stop", "end", "prev", "next", "wrap", "a", "mark", "apply", "TWiWt5SEDzaEqS6kE5gandWMNfxR2B5xzg", "onChangeInvestValue", "call", "value", "target", "setState", "checkTime", "props", "defaultAddress", "tronlinkLogin", "notification", "languageFile", "warning", "investValue", "state", "minDeposit", "trxBalance", "insufficientEthBalance", "needGasFee", "affAddr", "isAddress", "ownerAddr", "log", "Confirmation declined by user", 
+"confirmationDeclined", "catch", "successBuy", "success", "then", "send", "comingSoon", "info", "length", "search", "location", "substring", "render", "div", "investSection", "middle", "investPrompt", "h2", "27%", "span", "16px", "/", "day", "createElement", "fixHeightDiv", "p", "#00cb00", "investPromt1", "investPromt2", "investPromt3", "investInput", "large", "img", "trx", "30px", "black", "18px", "0", "10px", "TRX", "userNameInput", "investButton", "invest", "blueText", "600", "20px", "12px", "0,0", 
+"format", "floor", " TRX", "componentDidMount", "checkContract", "componentWillUnmount", "base58", "successWithdraw", "reInvest", "- Contract send Output:", "successReinvest", "noWallet", "lang", "getItem", "en", "./", ".json", "componentDidUpdate", "withdrawSection", "withdrawPrompt", "yourDividend", "withdrawable", "yourInvestment", "h1", "trxProfit", "startTrxProfit", ",", ".", "withdrawBottomPrompt", "dividendPrompt1", "top", "compoundInfo", "click", "withdrawButton reInvestButton", "white", 
+"withdrawButton", "0,0.00", "faq", "about", " Tron Profits", "promptROI", "roiHeader", "right", "logo", "flag", "ytWidget", "https://tronprofits.github.io/", "?ref=", "?ref=TMsoX61QzrCx5DLZPNeDG2mZ8v88tECyVu", "investSection investReferral", "refTitle", "referralTitle", "referralLinkSection", "flex", "center", "referralLink", "copySuccess", "referral", "copyButton", "copy", "h6", "left", "referralLinkInfo", "40px", "referralTransfer", "statusPrompt", "status", "space-around", "referralStatus", "tier1", 
+" (7%)", "tier3", " (2%)", "tier5", " (1%)", "tier7", "megaProfile", " ", "referrals", "vertical", "#444", "100px", "tier2", " (3%)", "tier4", "tier6", "tier8", "refRewards", "rewards", "isMobile", "userAgent", "test", "interval", "date", "calculateCountdown", "parse", "years", "days", "min", "sec", "addLeadingZeros", "Countdown", "Countdown-col", "Countdown-col-element", "strong", " :\u00a0", "defaultProps", "getContractData", "toFixed", "TRXbalance", "base", "getUnconfirmedBalance", "getTime", 
+"TWiWt5SEDz***********************", "roi ROI200", "roiBackground", "changeLang", "roiPromptSection", "#ED1E81", "27% ", "roiSlogen", "17% ", "roiSlogen2", "roiSlogen3", "roiInfo4", "#6780f1", "bold", "25px", "inline-block", "Launching In ", "THU July 9 2020 15:30:00 UTC", "linkSection", "https://t.me/tronprofits", "_blank", "noopener noreferrer", "joinTelegram", "concat", "https://tronscan.org/#/contract/", "dataSection", "invested", "b", "totalRefPayout", "investors", "roiSection", "getInitialState", 
+"tronWeb", "ready", "installed", "https://api.trongrid.io", "loggedIn", "setTronWeb", "toHex", "addressChanged", "on", "App", "root", "getElementById", "Cannot find module '", "'", "code", "MODULE_NOT_FOUND", "keys", "resolve", "id", "push", "webpackJsonp"];
+(window[_0xaffc[377]] = window[_0xaffc[377]] || [])[_0xaffc[376]]([[0], {
+  155 : function(data, linkedEntities, arrayer) {
+    data[_0xaffc[0]] = arrayer(376);
+  },
+  160 : function(branchData, beforeZero, afterZero) {
+  },
+  163 : function(identities) {
+    identities[_0xaffc[0]] = {
+      address : _0xaffc[1],
+      abi : [{
+        constant : true,
+        inputs : [],
+        name : _0xaffc[2],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [],
+        name : _0xaffc[7],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [],
+        name : _0xaffc[8],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [],
+        name : _0xaffc[9],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[10]
+        }],
+        name : _0xaffc[11],
+        outputs : [{
+          name : _0xaffc[12],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[13],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[14],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[15],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[16],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[17],
+          type : _0xaffc[10]
+        }, {
+          name : _0xaffc[18],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[19],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[20],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[21],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[22],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[23],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[24],
+          type : _0xaffc[4]
+        }, {
+          name : _0xaffc[25],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [],
+        name : _0xaffc[26],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }, {
+        inputs : [],
+        payable : false,
+        stateMutability : _0xaffc[27],
+        type : _0xaffc[28]
+      }, {
+        payable : true,
+        stateMutability : _0xaffc[29],
+        type : _0xaffc[30]
+      }, {
+        constant : false,
+        inputs : [{
+          name : _0xaffc[31],
+          type : _0xaffc[10]
+        }],
+        name : _0xaffc[32],
+        outputs : [],
+        payable : true,
+        stateMutability : _0xaffc[29],
+        type : _0xaffc[6]
+      }, {
+        constant : false,
+        inputs : [],
+        name : _0xaffc[33],
+        outputs : [],
+        payable : false,
+        stateMutability : _0xaffc[27],
+        type : _0xaffc[6]
+      }, {
+        constant : false,
+        inputs : [],
+        name : _0xaffc[34],
+        outputs : [],
+        payable : false,
+        stateMutability : _0xaffc[27],
+        type : _0xaffc[6]
+      }, {
+        constant : true,
+        inputs : [{
+          name : _0xaffc[35],
+          type : _0xaffc[10]
+        }],
+        name : _0xaffc[36],
+        outputs : [{
+          name : _0xaffc[3],
+          type : _0xaffc[4]
+        }],
+        payable : false,
+        stateMutability : _0xaffc[5],
+        type : _0xaffc[6]
+      }]
+    };
+  },
+  218 : function(branchData, beforeZero, afterZero) {
+    branchData[_0xaffc[0]] = _0xaffc[37];
+  },
+  221 : function(canCreateDiscussions) {
+    canCreateDiscussions[_0xaffc[0]] = {
+      referral : {
+        status : _0xaffc[38],
+        copySuccess : _0xaffc[39],
+        copy : _0xaffc[40],
+        tier1 : _0xaffc[41],
+        tier2 : _0xaffc[42],
+        tier3 : _0xaffc[43],
+        tier4 : _0xaffc[44],
+        tier5 : _0xaffc[45],
+        tier6 : _0xaffc[46],
+        tier7 : _0xaffc[47],
+        tier8 : _0xaffc[48],
+        referrals : _0xaffc[49],
+        levelBottom : _0xaffc[50]
+      },
+      countdown : {
+        days : _0xaffc[3],
+        hours : _0xaffc[3],
+        minutes : _0xaffc[3],
+        seconds : _0xaffc[3],
+        and : _0xaffc[51],
+        wholehours : _0xaffc[52],
+        wholeminutes : _0xaffc[53]
+      },
+      notification : {
+        comingSoon : _0xaffc[54],
+        noWallet : _0xaffc[55],
+        notEnough : _0xaffc[56],
+        minDeposit : _0xaffc[57],
+        noBalance : _0xaffc[58],
+        notEnoughTrxBalance : _0xaffc[59],
+        insufficientUnfreeze : _0xaffc[60],
+        invalidCode : _0xaffc[61],
+        needGasFee : _0xaffc[62],
+        minDeposit1 : _0xaffc[63],
+        transactionSuccess : _0xaffc[64],
+        transactionCompelted : _0xaffc[65],
+        transactionFailed : _0xaffc[66],
+        loginPrompt : _0xaffc[67],
+        investSuccess : _0xaffc[68],
+        insufficientUnstakedAmount : _0xaffc[69],
+        insufficientEthBalance : _0xaffc[70],
+        invalidBuyAmount : _0xaffc[71],
+        invalidSellAmount : _0xaffc[72],
+        insufficientDividendsBalance : _0xaffc[73],
+        insufficientProfit : _0xaffc[74],
+        confirmationDeclined : _0xaffc[75],
+        NetworkError : _0xaffc[76],
+        successReinvest : _0xaffc[77],
+        successWithdraw : _0xaffc[78],
+        successBuy : _0xaffc[79]
+      },
+      faq : {
+        about : _0xaffc[80],
+        promptROI : _0xaffc[81]
+      },
+      roi : {
+        invested : _0xaffc[82],
+        totalRefPayout : _0xaffc[83],
+        releaseDate : _0xaffc[84],
+        roiSlogen : _0xaffc[85],
+        roiSlogen2 : _0xaffc[86],
+        roiSlogen3 : _0xaffc[87],
+        compoundInfo : _0xaffc[88],
+        joinTelegram : _0xaffc[89],
+        compoundCalc : _0xaffc[90],
+        twitter : _0xaffc[91],
+        members : _0xaffc[92],
+        day : _0xaffc[93],
+        investors : _0xaffc[94],
+        currentUser : _0xaffc[95],
+        checkContract : _0xaffc[96],
+        openSource : _0xaffc[97],
+        releaseCoundown : _0xaffc[98],
+        roiInfo4 : _0xaffc[99],
+        yourInvestment : _0xaffc[100],
+        investAmount : _0xaffc[101],
+        investPromt1 : _0xaffc[102],
+        investPromt2 : _0xaffc[103],
+        investPromt3 : _0xaffc[104],
+        invest : _0xaffc[105],
+        reInvest : _0xaffc[106],
+        trxBalance : _0xaffc[107],
+        yourDividend : _0xaffc[108],
+        withdrawable : _0xaffc[109],
+        dividendPrompt1 : _0xaffc[110],
+        totalPayout : _0xaffc[111],
+        dividendPrompt2 : _0xaffc[112],
+        withdraw : _0xaffc[113],
+        referralTitle : _0xaffc[114],
+        rewards : _0xaffc[115],
+        referralLinkInfo : _0xaffc[116],
+        referralTransfer : _0xaffc[117]
+      }
+    };
+  },
+  227 : function(branchData, beforeZero, afterZero) {
+  },
+  228 : function(branchData, beforeZero, afterZero) {
+  },
+  229 : function(branchData, beforeZero, afterZero) {
+    branchData[_0xaffc[0]] = _0xaffc[118];
+  },
+  230 : function(formatters, customFormatters) {
+    formatters[_0xaffc[0]] = _0xaffc[119];
+  },
+  231 : function(formatters, customFormatters) {
+    formatters[_0xaffc[0]] = _0xaffc[120];
+  },
+  232 : function(formatters, customFormatters) {
+    formatters[_0xaffc[0]] = _0xaffc[121];
+  },
+  233 : function(formatters, customFormatters) {
+    formatters[_0xaffc[0]] = _0xaffc[122];
+  },
+  234 : function(formatters, customFormatters) {
+    formatters[_0xaffc[0]] = _0xaffc[123];
+  },
+  242 : function(branchData, beforeZero, afterZero) {
+  },
+  243 : function(branchData, beforeZero, afterZero) {
+  },
+  270 : function(formatters, customFormatters) {
+  },
+  271 : function(formatters, customFormatters) {
+  },
+  375 : function(branchData, beforeZero, afterZero) {
+  },
+  376 : function(isHidden, resourceId, require) {
+    _0xaffc[124];
+    require[_0xaffc[125]](resourceId);
+    var React = require(0);
+    var connect = require[_0xaffc[126]](React);
+    var level = require(4);
+    var adjustedLevel = require[_0xaffc[126]](level);
+    var TagHourlyStat = require(381);
+    var absId = (require(160), require(43));
+    var m = require[_0xaffc[126]](absId);
+    var sources = require(63);
+    var monster = require(9);
+    var templates = require(10);
+    var obj = require(12);
+    var attrs = require(11);
+    var modules = require(13);
+    var renderAssign = require(385);
+    var ThoughtCollection = require(386);
+    var requestHelpers = require(383);
+    var CheckHourlyStat = require(380);
+    var argumentArray = require(163);
+    var _0xd427x16 = {
+      tronweb : false,
+      roi : false,
+      ROI200ContractAddress : argumentArray[_0xaffc[10]],
+      ownerAddr : _0xaffc[127],
+      setTronWeb : function() {
+        var deferred = Object(sources[_0xaffc[137]])(m[_0xaffc[137]][_0xaffc[138]](function cleanUp(movieElement) {
+          return m[_0xaffc[137]][_0xaffc[136]](function(isSlidingUp) {
+            for (;;) {
+              switch(isSlidingUp[_0xaffc[134]] = isSlidingUp[_0xaffc[135]]) {
+                case 0:
+                  this[_0xaffc[128]] = movieElement;
+                  this[_0xaffc[129]] = movieElement[_0xaffc[131]](argumentArray[_0xaffc[130]], argumentArray[_0xaffc[10]]);
+                case 2:
+                case _0xaffc[133]:
+                  return isSlidingUp[_0xaffc[132]]();
+              }
+            }
+          }, cleanUp, this);
+        }));
+        return function(canCreateDiscussions) {
+          return deferred[_0xaffc[139]](this, arguments);
+        };
+      }()
+    };
+    var CheckDailyStat = require(388);
+    var _0xd427x18 = _0xaffc[140];
+    var reductio_parameters = require(73);
+    var GET_AUTH_URL_TIMEOUT = function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var _0xd427x3;
+        return Object(monster[_0xaffc[137]])(this, e), (_0xd427x3 = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[141]] = function(canCreateDiscussions) {
+          _0xd427x3[_0xaffc[145]]({
+            investValue : canCreateDiscussions[_0xaffc[144]][_0xaffc[143]]
+          });
+        }, _0xd427x3[_0xaffc[32]] = function() {
+          if (_0xd427x3[_0xaffc[147]][_0xaffc[146]]()) {
+            if (_0xd427x16[_0xaffc[128]]) {
+              if (_0xd427x16[_0xaffc[128]][_0xaffc[148]] === _0xd427x18) {
+                requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[149]]);
+              } else {
+                if (_0xd427x3[_0xaffc[154]][_0xaffc[153]] < 50) {
+                  requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[155]]);
+                } else {
+                  if (_0xd427x3[_0xaffc[154]][_0xaffc[153]] > parseInt(_0xd427x3[_0xaffc[147]][_0xaffc[156]])) {
+                    requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[157]]);
+                  } else {
+                    if (_0xd427x3[_0xaffc[154]][_0xaffc[153]] > parseInt(_0xd427x3[_0xaffc[147]][_0xaffc[156]]) - 4) {
+                      requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[158]]);
+                    } else {
+                      var artistTrack = _0xd427x16[_0xaffc[128]][_0xaffc[160]](_0xd427x3[_0xaffc[154]][_0xaffc[159]]) ? _0xd427x3[_0xaffc[154]][_0xaffc[159]] : _0xd427x16[_0xaffc[161]];
+                      _0xd427x16[_0xaffc[129]][_0xaffc[32]](artistTrack)[_0xaffc[169]]({
+                        callValue : 1E6 * _0xd427x3[_0xaffc[154]][_0xaffc[153]]
+                      })[_0xaffc[168]](function(body) {
+                        _0xd427x3[_0xaffc[145]]({
+                          investValue : 50
+                        });
+                        requestHelpers[_0xaffc[137]][_0xaffc[167]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[166]], 2);
+                        console[_0xaffc[162]](body);
+                      })[_0xaffc[165]](function(body) {
+                        console[_0xaffc[162]](body);
+                        if (_0xaffc[163] === body) {
+                          requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[164]]);
+                        } else {
+                          requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]].NetworkError);
+                        }
+                      });
+                    }
+                  }
+                }
+              }
+            } else {
+              requestHelpers[_0xaffc[137]][_0xaffc[152]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[149]]);
+            }
+          } else {
+            requestHelpers[_0xaffc[137]][_0xaffc[171]](_0xd427x3[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[170]]);
+          }
+        }, _0xd427x3[_0xaffc[154]] = {
+          player : null,
+          trxDeposit : 0,
+          investValue : 50,
+          affAddr : window[_0xaffc[174]][_0xaffc[173]][_0xaffc[175]](window[_0xaffc[174]][_0xaffc[173]][_0xaffc[172]] - 34, window[_0xaffc[174]][_0xaffc[173]][_0xaffc[172]])
+        }, _0xd427x3;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[176],
+        value : function() {
+          var counterHandlers = this;
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[178],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[180]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[181], null, _0xaffc[182], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              fontSize : _0xaffc[184]
+            }
+          }, _0xaffc[185], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[186]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[188]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[190]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](CheckDailyStat[_0xaffc[137]], null)), this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[191]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[190]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](CheckDailyStat[_0xaffc[137]], null)), this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[192]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[190]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](CheckDailyStat[_0xaffc[137]], null)), this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[193]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[194]
+          }, connect[_0xaffc[137]][_0xaffc[187]](CheckHourlyStat[_0xaffc[137]], {
+            size : _0xaffc[195],
+            prefix : connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[196], {
+              src : require(218),
+              alt : _0xaffc[197],
+              width : _0xaffc[198]
+            }),
+            suffix : connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+              style : {
+                color : _0xaffc[199],
+                fontSize : _0xaffc[200],
+                margin : _0xaffc[201],
+                paddingLeft : _0xaffc[202]
+              }
+            }, _0xaffc[203]),
+            value : this[_0xaffc[154]][_0xaffc[153]],
+            onChange : this[_0xaffc[141]],
+            ref : function(name) {
+              return counterHandlers[_0xaffc[204]] = name;
+            }
+          }))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[205],
+            onClick : function() {
+              counterHandlers[_0xaffc[32]]();
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[206]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[207]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            style : {
+              fontWeight : _0xaffc[208],
+              marginTop : _0xaffc[209],
+              fontSize : _0xaffc[210]
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[156]], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              marginLeft : _0xaffc[202]
+            }
+          }, reductio_parameters(Math[_0xaffc[213]](this[_0xaffc[147]][_0xaffc[156]]))[_0xaffc[212]](_0xaffc[211]), _0xaffc[214])))));
+        }
+      }]), e;
+    }(React.Component);
+    var EffectChain = require(384);
+    var GenerateGif = require(387);
+    var frontEndModuleConfig = require(382);
+    var jsonfn = require(389);
+    var layout = require(143);
+    var toMessageString = require[_0xaffc[126]](layout);
+    var _0xd427x21 = _0xaffc[140];
+    /** @type {null} */
+    var initializeCheckTimer = null;
+    /** @type {null} */
+    var _takingTooLongTimeout = null;
+    /** @type {null} */
+    var paintNodesTimeout = null;
+    /** @type {null} */
+    var y$$ = null;
+    var F2Data = require(73);
+    var numKeysDeleted = function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var voronoi;
+        Object(monster[_0xaffc[137]])(this, e);
+        /**
+         * @return {undefined}
+         */
+        (voronoi = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[215]] = function() {
+          /** @type {number} */
+          initializeCheckTimer = setInterval(function() {
+            voronoi[_0xaffc[216]]();
+          }, 1E3);
+        };
+        /**
+         * @return {undefined}
+         */
+        voronoi[_0xaffc[217]] = function() {
+          clearInterval(initializeCheckTimer);
+          clearTimeout(_takingTooLongTimeout);
+          clearTimeout(paintNodesTimeout);
+        };
+        /**
+         * @return {undefined}
+         */
+        voronoi[_0xaffc[216]] = function() {
+          if (_0xd427x16[_0xaffc[129]] && _0xd427x16[_0xaffc[128]] && _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]] !== _0xd427x21) {
+            voronoi[_0xaffc[36]](false);
+            setInterval(function() {
+              voronoi[_0xaffc[36]](false);
+            }, 2200);
+            clearInterval(initializeCheckTimer);
+          }
+        };
+        /**
+         * @param {?} canCreateDiscussions
+         * @return {undefined}
+         */
+        voronoi[_0xaffc[36]] = function(canCreateDiscussions) {
+          _0xd427x16[_0xaffc[129]][_0xaffc[36]](_0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]])[_0xaffc[142]]({
+            from : _0xaffc[140]
+          })[_0xaffc[168]](function(mainPost) {
+            voronoi[_0xaffc[145]]({
+              trxProfit : parseInt(mainPost._hex, 16) / 1E6
+            }, function() {
+              if (canCreateDiscussions) {
+                voronoi[_0xaffc[145]]({
+                  startTrxProfit : parseInt(mainPost._hex, 16) / 1E6
+                });
+              } else {
+                /** @type {number} */
+                paintNodesTimeout = setTimeout(function() {
+                  voronoi[_0xaffc[145]]({
+                    startTrxProfit : parseInt(mainPost._hex, 16) / 1E6
+                  });
+                }, 2100);
+              }
+            });
+          })[_0xaffc[165]](function(body) {
+            return console[_0xaffc[162]](body);
+          });
+        };
+        /**
+         * @return {?}
+         */
+        voronoi[_0xaffc[33]] = function() {
+          if (voronoi[_0xaffc[147]][_0xaffc[146]]()) {
+            if (_0xd427x16[_0xaffc[128]]) {
+              if (_0xd427x16[_0xaffc[128]][_0xaffc[148]] === _0xd427x21) {
+                requestHelpers[_0xaffc[137]][_0xaffc[152]](y$$[_0xaffc[150]][_0xaffc[149]]);
+              } else {
+                if (parseInt(voronoi[_0xaffc[147]][_0xaffc[156]]) < 4) {
+                  return void requestHelpers[_0xaffc[137]][_0xaffc[152]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[158]]);
+                }
+                _0xd427x16[_0xaffc[129]][_0xaffc[33]]()[_0xaffc[169]]()[_0xaffc[168]](function(canCreateDiscussions) {
+                  /** @type {number} */
+                  _takingTooLongTimeout = setTimeout(function() {
+                    voronoi[_0xaffc[36]](false);
+                  }, 3E3);
+                  requestHelpers[_0xaffc[137]][_0xaffc[167]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[219]], 2);
+                })[_0xaffc[165]](function(body) {
+                  console[_0xaffc[162]](body);
+                  if (_0xaffc[163] === body) {
+                    requestHelpers[_0xaffc[137]][_0xaffc[152]](y$$[_0xaffc[150]][_0xaffc[164]]);
+                  } else {
+                    requestHelpers[_0xaffc[137]][_0xaffc[152]](y$$[_0xaffc[150]].NetworkError);
+                  }
+                });
+              }
+            } else {
+              requestHelpers[_0xaffc[137]][_0xaffc[152]](y$$[_0xaffc[150]][_0xaffc[149]]);
+            }
+          } else {
+            requestHelpers[_0xaffc[137]][_0xaffc[171]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[170]]);
+          }
+        };
+        /**
+         * @return {undefined}
+         */
+        voronoi[_0xaffc[220]] = function() {
+          if (voronoi[_0xaffc[147]][_0xaffc[146]]()) {
+            if (_0xd427x16[_0xaffc[128]] && _0xd427x16[_0xaffc[129]] && _0xd427x16[_0xaffc[128]][_0xaffc[148]]) {
+              if (parseInt(voronoi[_0xaffc[147]][_0xaffc[156]]) < 4) {
+                requestHelpers[_0xaffc[137]][_0xaffc[152]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[158]]);
+              } else {
+                _0xd427x16[_0xaffc[129]][_0xaffc[34]]()[_0xaffc[169]]({
+                  from : _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]]
+                })[_0xaffc[168]](function(b) {
+                  console[_0xaffc[162]](_0xaffc[221], b);
+                  requestHelpers[_0xaffc[137]][_0xaffc[167]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[222]], 2);
+                })[_0xaffc[165]](function(body) {
+                  console[_0xaffc[162]](body);
+                });
+              }
+            } else {
+              requestHelpers[_0xaffc[137]][_0xaffc[152]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[223]]);
+            }
+          } else {
+            requestHelpers[_0xaffc[137]][_0xaffc[171]](voronoi[_0xaffc[147]][_0xaffc[151]][_0xaffc[150]][_0xaffc[170]]);
+          }
+        };
+        voronoi[_0xaffc[154]] = {
+          player : null,
+          trxProfit : 0,
+          startTrxProfit : 0
+        };
+        var _0xd427x5 = sessionStorage[_0xaffc[225]](_0xaffc[224]) || _0xaffc[226];
+        return y$$ = require(57)(_0xaffc[227] + _0xd427x5 + _0xaffc[228]), voronoi;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[229],
+        value : function(recB) {
+          if (this[_0xaffc[147]][_0xaffc[224]] !== recB[_0xaffc[224]]) {
+            y$$ = require(57)(_0xaffc[227] + this[_0xaffc[147]][_0xaffc[224]] + _0xaffc[228]);
+            this[_0xaffc[145]]({
+              lang : this[_0xaffc[147]][_0xaffc[224]]
+            });
+          }
+        }
+      }, {
+        key : _0xaffc[176],
+        value : function() {
+          var _0xd427x1 = this;
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[230]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[231]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[181], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[232]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[188]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[233]
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[234]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, this[_0xaffc[147]][_0xaffc[12]], _0xaffc[214]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[233]
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[233]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], {
+            className : _0xaffc[236]
+          }, connect[_0xaffc[137]][_0xaffc[187]](toMessageString[_0xaffc[137]], {
+            start : this[_0xaffc[154]][_0xaffc[237]],
+            end : this[_0xaffc[154]][_0xaffc[236]],
+            duration : 2,
+            separator : _0xaffc[238],
+            decimals : 6,
+            decimal : _0xaffc[239],
+            suffix : _0xaffc[214],
+            useEasing : false
+          })), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[240]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[241]]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](frontEndModuleConfig[_0xaffc[137]], {
+            placement : _0xaffc[242],
+            title : connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[243]]),
+            arrowPointAtCenter : true,
+            trigger : _0xaffc[244]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              fontSize : _0xaffc[209],
+              marginRight : _0xaffc[202]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](jsonfn[_0xaffc[137]], null))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[245],
+            onClick : function() {
+              _0xd427x1[_0xaffc[220]]();
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            style : {
+              color : _0xaffc[246]
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[220]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[247],
+            onClick : function() {
+              _0xd427x1[_0xaffc[33]]();
+            },
+            style : {
+              marginLeft : _0xaffc[202]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[33]]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[207],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            style : {
+              fontWeight : _0xaffc[208],
+              marginTop : _0xaffc[209],
+              fontSize : _0xaffc[210]
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[7]], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              marginLeft : _0xaffc[202]
+            }
+          }, F2Data(this[_0xaffc[147]][_0xaffc[7]])[_0xaffc[212]](_0xaffc[248]), _0xaffc[214])))));
+        }
+      }]), e;
+    }(React.Component);
+    var postDateGmt = (require(227), function(results) {
+      /**
+       * @return {?}
+       */
+      function e() {
+        return Object(monster[_0xaffc[137]])(this, e), Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[139]](this, arguments));
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[176],
+        value : function() {
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[249]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[249]][_0xaffc[250]], _0xaffc[251]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[249]][_0xaffc[252]])));
+        }
+      }]), e;
+    }(React.Component));
+    var _maskLayer = (require(228), function(results) {
+      /**
+       * @return {?}
+       */
+      function e() {
+        return Object(monster[_0xaffc[137]])(this, e), Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[139]](this, arguments));
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[176],
+        value : function() {
+          var _0xd427x1 = this;
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[253],
+            align : _0xaffc[254]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[196], {
+            src : require(229),
+            alt : _0xaffc[255]
+          }), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[256],
+            id : _0xaffc[257]
+          }));
+        }
+      }]), e;
+    }(React.Component));
+    var genBrick = require(379);
+    var genWaveBrick = require(147);
+    var _0xd427x2c = _0xaffc[140];
+    /** @type {null} */
+    var _td_alert = null;
+    var _0xd427x2e = _0xaffc[258];
+    var _maskLayerSimulate = function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var options;
+        return Object(monster[_0xaffc[137]])(this, e), (options = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[215]] = function() {
+          /** @type {number} */
+          _td_alert = setInterval(function() {
+            options[_0xaffc[216]]();
+          }, 1E3);
+        }, options[_0xaffc[217]] = function() {
+          clearInterval(_td_alert);
+        }, options[_0xaffc[216]] = function() {
+          if (_0xd427x16[_0xaffc[129]] && _0xd427x16[_0xaffc[128]] && _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]] !== _0xd427x2c) {
+            options[_0xaffc[145]]({
+              referralLink : _0xd427x2e + _0xaffc[259] + _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]]
+            });
+            clearInterval(_td_alert);
+          }
+        }, options[_0xaffc[154]] = {
+          referralLink : _0xd427x2e + _0xaffc[260],
+          player : null
+        }, options;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[176],
+        value : function() {
+          var _0xd427x1 = this;
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[261]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[262]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[181], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[263]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[264],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](EffectChain[_0xaffc[137]], {
+            type : _0xaffc[265],
+            justify : _0xaffc[266],
+            align : _0xaffc[242]
+          }, connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 16,
+            sm : 16,
+            md : 14
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[267],
+            style : {
+              color : _0xaffc[199]
+            }
+          }, this[_0xaffc[154]][_0xaffc[267]])), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 2,
+            sm : 2,
+            md : 2
+          }), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 6,
+            sm : 6,
+            md : 4
+          }, connect[_0xaffc[137]][_0xaffc[187]](genWaveBrick.CopyToClipboard, {
+            text : this[_0xaffc[154]][_0xaffc[267]],
+            onCopy : function() {
+              requestHelpers[_0xaffc[137]][_0xaffc[167]](_0xd427x1[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[268]]);
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[270]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[271]]))))), connect[_0xaffc[137]][_0xaffc[187]](EffectChain[_0xaffc[137]], {
+            type : _0xaffc[265],
+            justify : _0xaffc[266],
+            align : _0xaffc[242]
+          }, connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 24,
+            sm : 24,
+            md : 14
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[272], {
+            style : {
+              textAlign : _0xaffc[273]
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[274]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[272], {
+            style : {
+              textAlign : _0xaffc[273],
+              color : _0xaffc[199],
+              marginBottom : _0xaffc[275]
+            }
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[276]])), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 0,
+            sm : 0,
+            md : 2
+          }), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 0,
+            sm : 0,
+            md : 4
+          }))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[277]
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[278]]), connect[_0xaffc[137]][_0xaffc[187]](EffectChain[_0xaffc[137]], {
+            type : _0xaffc[265],
+            justify : _0xaffc[279],
+            align : _0xaffc[179],
+            className : _0xaffc[280]
+          }, connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 5,
+            sm : 5,
+            md : 5,
+            style : {
+              textAlign : _0xaffc[273]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[281]], _0xaffc[282]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[283]], _0xaffc[284]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[285]], _0xaffc[286]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[287]], 
+          _0xaffc[286])), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 6,
+            sm : 6,
+            md : 6,
+            style : {
+              textAlign : _0xaffc[254]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[18]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[20]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[22]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), 
+          connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[24]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]])), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 1,
+            sm : 1,
+            md : 1,
+            style : {
+              textAlign : _0xaffc[266]
+            },
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](genBrick[_0xaffc[137]], {
+            type : _0xaffc[291],
+            style : {
+              backgroundColor : _0xaffc[292],
+              height : _0xaffc[293]
+            }
+          })), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 5,
+            sm : 5,
+            md : 5,
+            style : {
+              textAlign : _0xaffc[273]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[294]], _0xaffc[295]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[296]], _0xaffc[286]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[297]], _0xaffc[286]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[298]], 
+          _0xaffc[286])), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 6,
+            sm : 6,
+            md : 6,
+            style : {
+              textAlign : _0xaffc[254]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[19]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[21]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[23]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]), 
+          connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, this[_0xaffc[147]][_0xaffc[288]][_0xaffc[25]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[151]][_0xaffc[269]][_0xaffc[290]]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], {
+            className : _0xaffc[299]
+          }, this[_0xaffc[147]][_0xaffc[151]][_0xaffc[129]][_0xaffc[300]], _0xaffc[289], this[_0xaffc[147]][_0xaffc[288]][_0xaffc[15]], _0xaffc[214])));
+        }
+      }]), e;
+    }(React.Component);
+    var res = (require(242), function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var dates;
+        return Object(monster[_0xaffc[137]])(this, e), (dates = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[301]] = function() {
+          return !!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i[_0xaffc[303]](navigator[_0xaffc[302]]);
+        }, dates[_0xaffc[154]] = {
+          days : 0,
+          hours : 0,
+          min : 0,
+          sec : 0
+        }, dates;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[215],
+        value : function() {
+          var command_codes = this;
+          /** @type {number} */
+          this[_0xaffc[304]] = setInterval(function() {
+            var data = command_codes[_0xaffc[306]](command_codes[_0xaffc[147]][_0xaffc[305]]);
+            if (data) {
+              command_codes[_0xaffc[145]](data);
+            } else {
+              command_codes[_0xaffc[132]]();
+            }
+          }, 1E3);
+        }
+      }, {
+        key : _0xaffc[217],
+        value : function() {
+          this[_0xaffc[132]]();
+        }
+      }, {
+        key : _0xaffc[306],
+        value : function(ms_since_1970) {
+          /** @type {number} */
+          var off = (Date[_0xaffc[307]](new Date(ms_since_1970)) - Date[_0xaffc[307]](new Date)) / 1E3;
+          if (off <= 0) {
+            return false;
+          }
+          var dateData = {
+            years : 0,
+            days : 0,
+            hours : 0,
+            min : 0,
+            sec : 0
+          };
+          return off >= 31557600 && (dateData[_0xaffc[308]] = Math[_0xaffc[213]](off / 31557600), off = off - 365.25 * dateData[_0xaffc[308]] * 86400), off >= 86400 && (dateData[_0xaffc[309]] = Math[_0xaffc[213]](off / 86400), off = off - 86400 * dateData[_0xaffc[309]]), off >= 3600 && (dateData[_0xaffc[52]] = Math[_0xaffc[213]](off / 3600), off = off - 3600 * dateData[_0xaffc[52]]), off >= 60 && (dateData[_0xaffc[310]] = Math[_0xaffc[213]](off / 60), off = off - 60 * dateData[_0xaffc[310]]), dateData[_0xaffc[311]] = 
+          off, dateData;
+        }
+      }, {
+        key : _0xaffc[132],
+        value : function() {
+          clearInterval(this[_0xaffc[304]]);
+        }
+      }, {
+        key : _0xaffc[312],
+        value : function(b) {
+          /** @type {string} */
+          b = String(b);
+          for (; b[_0xaffc[172]] < 2;) {
+            b = _0xaffc[201] + b;
+          }
+          return b;
+        }
+      }, {
+        key : _0xaffc[176],
+        value : function() {
+          var _0xd427x1 = this[_0xaffc[154]];
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[313],
+            align : _0xaffc[273]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[314]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[315]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[316], null, this[_0xaffc[312]](_0xd427x1[_0xaffc[309]]), _0xaffc[317]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[314]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[315]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[316], null, this[_0xaffc[312]](_0xd427x1[_0xaffc[52]]), _0xaffc[317]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[314]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[315]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[316], null, this[_0xaffc[312]](_0xd427x1[_0xaffc[310]]), _0xaffc[317]))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[314]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            className : _0xaffc[315]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[316], null, _0xaffc[289], this[_0xaffc[312]](_0xd427x1[_0xaffc[311]])))));
+        }
+      }]), e;
+    }(React.Component));
+    res[_0xaffc[318]] = {
+      date : new Date
+    };
+    var res__$1 = res;
+    /** @type {null} */
+    var _0xd427x32 = (require(243), null);
+    /** @type {null} */
+    var intervalId1 = null;
+    /** @type {null} */
+    var appendTrackTimer = null;
+    var F2Row = require(73);
+    var _0xd427x36 = _0xaffc[140];
+    var topShowDialog = function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var _0xd427x4;
+        Object(monster[_0xaffc[137]])(this, e);
+        /**
+         * @return {undefined}
+         */
+        (_0xd427x4 = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[215]] = function() {
+          /** @type {number} */
+          intervalId1 = setInterval(function() {
+            _0xd427x4[_0xaffc[216]]();
+          }, 1E3);
+        };
+        /**
+         * @return {undefined}
+         */
+        _0xd427x4[_0xaffc[216]] = function() {
+          if (_0xd427x16[_0xaffc[129]] && _0xd427x16[_0xaffc[128]] && _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]] !== _0xd427x36) {
+            _0xd427x4[_0xaffc[145]]({
+              walletAddress : _0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]]
+            });
+            _0xd427x4[_0xaffc[319]]();
+            clearInterval(intervalId1);
+          }
+        };
+        /**
+         * @return {undefined}
+         */
+        _0xd427x4[_0xaffc[217]] = function() {
+          clearInterval(intervalId1);
+          clearTimeout(appendTrackTimer);
+        };
+        /**
+         * @return {undefined}
+         */
+        _0xd427x4[_0xaffc[319]] = function() {
+          _0xd427x16[_0xaffc[129]][_0xaffc[26]]()[_0xaffc[142]]()[_0xaffc[168]](function(mainPost) {
+            _0xd427x4[_0xaffc[145]]({
+              investors : 1.5 * parseInt(mainPost._hex, 16)
+            });
+          });
+          _0xd427x16[_0xaffc[129]][_0xaffc[9]]()[_0xaffc[142]]()[_0xaffc[168]](function(mainPost) {
+            _0xd427x4[_0xaffc[145]]({
+              invested : parseInt(mainPost._hex, 16) / 1E6,
+              totalRefPayout : parseInt(mainPost._hex, 16) / 1E6 * .15
+            });
+          })[_0xaffc[165]](function(body) {
+            return console[_0xaffc[162]](body);
+          });
+          _0xd427x16[_0xaffc[129]][_0xaffc[11]](_0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[218]])[_0xaffc[142]]()[_0xaffc[168]](function(canCreateDiscussions) {
+            _0xd427x4[_0xaffc[145]]({
+              trxDeposit : parseInt(canCreateDiscussions[_0xaffc[12]]._hex, 16) / 1E6,
+              aff1sum : parseInt(canCreateDiscussions[_0xaffc[18]]._hex, 16),
+              aff2sum : parseInt(canCreateDiscussions[_0xaffc[19]]._hex, 16),
+              aff3sum : parseInt(canCreateDiscussions[_0xaffc[20]]._hex, 16),
+              aff4sum : parseInt(canCreateDiscussions[_0xaffc[21]]._hex, 16),
+              aff5sum : parseInt(canCreateDiscussions[_0xaffc[22]]._hex, 16),
+              aff6sum : parseInt(canCreateDiscussions[_0xaffc[23]]._hex, 16),
+              aff7sum : parseInt(canCreateDiscussions[_0xaffc[24]]._hex, 16),
+              aff8sum : parseInt(canCreateDiscussions[_0xaffc[25]]._hex, 16),
+              affRewards : parseInt(canCreateDiscussions[_0xaffc[15]]._hex, 16) / 1E6,
+              payoutSum : parseInt(canCreateDiscussions[_0xaffc[16]]._hex, 16) / 1E6 + parseInt(canCreateDiscussions[_0xaffc[15]]._hex, 16) / 1E6
+            });
+          })[_0xaffc[165]](function(body) {
+            return console[_0xaffc[162]](body);
+          });
+          _0xd427x16[_0xaffc[128]][_0xaffc[197]][_0xaffc[323]](_0xd427x16[_0xaffc[128]][_0xaffc[148]][_0xaffc[322]])[_0xaffc[168]](function(canCreateDiscussions) {
+            if ((canCreateDiscussions / 1E6)[_0xaffc[320]](2) !== _0xd427x4[_0xaffc[154]][_0xaffc[321]]) {
+              _0xd427x4[_0xaffc[145]]({
+                trxBalance : (canCreateDiscussions / 1E6)[_0xaffc[320]](2)
+              });
+            }
+          })[_0xaffc[165]](function(body) {
+            return console[_0xaffc[162]](body);
+          });
+          /** @type {number} */
+          appendTrackTimer = setTimeout(function() {
+            _0xd427x4[_0xaffc[319]]();
+          }, 3E3);
+        };
+        /**
+         * @return {?}
+         */
+        _0xd427x4[_0xaffc[146]] = function() {
+          return (new Date)[_0xaffc[324]]() / 1E3 >= 1594308600;
+        };
+        _0xd427x4[_0xaffc[154]] = {
+          walletAddress : _0xaffc[325],
+          aff1sum : 0,
+          aff2sum : 0,
+          aff3sum : 0,
+          aff4sum : 0,
+          aff5sum : 0,
+          aff6sum : 0,
+          aff7sum : 0,
+          aff8sum : 0,
+          affRewards : 0,
+          invested : 0,
+          trxDeposit : 0,
+          investors : 0,
+          payoutSum : 0,
+          totalRefPayout : 0,
+          trxBalance : 0
+        };
+        var _0xd427x5 = sessionStorage[_0xaffc[225]](_0xaffc[224]) || _0xaffc[226];
+        return _0xd427x32 = require(57)(_0xaffc[227] + _0xd427x5 + _0xaffc[228]), _0xd427x4;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[229],
+        value : function(recB) {
+          if (this[_0xaffc[147]][_0xaffc[224]] !== recB[_0xaffc[224]]) {
+            _0xd427x32 = require(57)(_0xaffc[227] + this[_0xaffc[147]][_0xaffc[224]] + _0xaffc[228]);
+            this[_0xaffc[145]]({
+              lang : this[_0xaffc[147]][_0xaffc[224]]
+            });
+          }
+        }
+      }, {
+        key : _0xaffc[176],
+        value : function() {
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[326]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[327],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_maskLayer, {
+            languageFile : _0xd427x32,
+            changeLang : this[_0xaffc[147]][_0xaffc[328]]
+          }), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[329],
+            align : _0xaffc[273]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[330]
+            }
+          }, _0xaffc[331]), _0xd427x32[_0xaffc[129]][_0xaffc[332]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, _0xaffc[333], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[330]
+            }
+          }, _0xd427x32[_0xaffc[129]][_0xaffc[334]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, _0xd427x32[_0xaffc[129]][_0xaffc[335]]), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, _0xd427x32[_0xaffc[129]][_0xaffc[336]]), this[_0xaffc[146]]() ? null : connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[181], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[183], {
+            style : {
+              color : _0xaffc[337],
+              fontWeight : _0xaffc[338],
+              fontSize : _0xaffc[339],
+              marginTop : _0xaffc[209],
+              display : _0xaffc[340]
+            }
+          }, _0xaffc[341])), this[_0xaffc[146]]() ? null : connect[_0xaffc[137]][_0xaffc[187]](res__$1, {
+            date : _0xaffc[342]
+          }), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            align : _0xaffc[273],
+            className : _0xaffc[343]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[216]
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[137], {
+            href : _0xaffc[344],
+            target : _0xaffc[345],
+            rel : _0xaffc[346]
+          }, _0xd427x32[_0xaffc[129]][_0xaffc[347]])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[216],
+            style : {
+              marginLeft : _0xaffc[202]
+            }
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[137], {
+            href : _0xaffc[349][_0xaffc[348]](_0xd427x16.ROI200ContractAddress),
+            target : _0xaffc[345],
+            rel : _0xaffc[346]
+          }, _0xd427x32[_0xaffc[129]][_0xaffc[216]]))))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[350],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](EffectChain[_0xaffc[137]], {
+            type : _0xaffc[265],
+            justify : _0xaffc[279],
+            align : _0xaffc[179]
+          }, connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            span : 12
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, F2Row(this[_0xaffc[154]][_0xaffc[351]])[_0xaffc[212]](_0xaffc[211])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, _0xd427x32[_0xaffc[129]][_0xaffc[351]], _0xaffc[289], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[352], null, _0xaffc[203]))), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            span : 12
+          }, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, F2Row(this[_0xaffc[154]][_0xaffc[353]])[_0xaffc[212]](_0xaffc[211])), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, _0xd427x32[_0xaffc[129]][_0xaffc[353]], _0xaffc[289], connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[352], null, _0xaffc[203])))), connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[235], null, F2Row(this[_0xaffc[154]][_0xaffc[354]])[_0xaffc[212]](_0xaffc[211])), 
+          connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[189], null, connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[352], null, _0xd427x32[_0xaffc[129]][_0xaffc[354]])))), connect[_0xaffc[137]][_0xaffc[187]](EffectChain[_0xaffc[137]], {
+            type : _0xaffc[265],
+            justify : _0xaffc[279],
+            align : _0xaffc[179],
+            className : _0xaffc[355]
+          }, connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 24,
+            sm : 24,
+            md : 11
+          }, connect[_0xaffc[137]][_0xaffc[187]](GET_AUTH_URL_TIMEOUT, {
+            trxBalance : this[_0xaffc[154]][_0xaffc[156]],
+            trxDeposit : this[_0xaffc[154]][_0xaffc[12]],
+            languageFile : _0xd427x32,
+            lang : this[_0xaffc[147]][_0xaffc[224]],
+            checkTime : this[_0xaffc[146]]
+          })), connect[_0xaffc[137]][_0xaffc[187]](GenerateGif[_0xaffc[137]], {
+            xs : 24,
+            sm : 24,
+            md : 11
+          }, connect[_0xaffc[137]][_0xaffc[187]](numKeysDeleted, {
+            trxBalance : this[_0xaffc[154]][_0xaffc[156]],
+            trxDeposit : this[_0xaffc[154]][_0xaffc[12]],
+            languageFile : _0xd427x32,
+            lang : this[_0xaffc[147]][_0xaffc[224]],
+            totalPayout : this[_0xaffc[154]][_0xaffc[16]],
+            checkTime : this[_0xaffc[146]]
+          }))), connect[_0xaffc[137]][_0xaffc[187]](_maskLayerSimulate, {
+            megaProfile : this[_0xaffc[154]],
+            languageFile : _0xd427x32,
+            lang : this[_0xaffc[147]][_0xaffc[224]]
+          }), connect[_0xaffc[137]][_0xaffc[187]](postDateGmt, {
+            languageFile : _0xd427x32
+          }));
+        }
+      }]), e;
+    }(React.Component);
+    var button2Component = function(results) {
+      /**
+       * @return {?}
+       */
+      function e() {
+        return Object(monster[_0xaffc[137]])(this, e), Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[139]](this, arguments));
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[176],
+        value : function() {
+          var _0xd427x1 = this;
+          return connect[_0xaffc[137]][_0xaffc[187]](renderAssign[_0xaffc[137]], null, connect[_0xaffc[137]][_0xaffc[187]](ThoughtCollection[_0xaffc[137]], {
+            exact : true,
+            path : _0xaffc[185],
+            render : function() {
+              return connect[_0xaffc[137]][_0xaffc[187]](topShowDialog, {
+                lang : _0xd427x1[_0xaffc[147]][_0xaffc[224]],
+                changeLang : _0xd427x1[_0xaffc[147]][_0xaffc[328]]
+              });
+            }
+          }), connect[_0xaffc[137]][_0xaffc[187]](ThoughtCollection[_0xaffc[137]], {
+            render : function() {
+              return connect[_0xaffc[137]][_0xaffc[187]](topShowDialog, {
+                lang : _0xd427x1[_0xaffc[147]][_0xaffc[224]],
+                changeLang : _0xd427x1[_0xaffc[147]][_0xaffc[328]]
+              });
+            }
+          }));
+        }
+      }]), e;
+    }(React.Component);
+    var baseId = require(149);
+    var showImageInToolbar = require[_0xaffc[126]](baseId);
+    var artistTrack = (require(375), function(results) {
+      /**
+       * @param {?} n
+       * @return {?}
+       */
+      function e(n) {
+        var _servers;
+        return Object(monster[_0xaffc[137]])(this, e), (_servers = Object(obj[_0xaffc[137]])(this, Object(attrs[_0xaffc[137]])(e)[_0xaffc[142]](this, n)))[_0xaffc[328]] = function(options) {
+          _servers[_0xaffc[145]]({
+            lang : options
+          }, function() {
+            sessionStorage[_0xaffc[224]] = _servers[_0xaffc[154]][_0xaffc[224]];
+          });
+        }, _servers[_0xaffc[154]] = {
+          lang : _0xaffc[226],
+          address : null
+        }, _servers;
+      }
+      return Object(modules[_0xaffc[137]])(e, results), Object(templates[_0xaffc[137]])(e, [{
+        key : _0xaffc[356],
+        value : function() {
+          var val = sessionStorage[_0xaffc[225]](_0xaffc[224]) || _0xaffc[226];
+          sessionStorage[_0xaffc[224]] = val;
+          this[_0xaffc[145]]({
+            lang : val
+          });
+        }
+      }, {
+        key : _0xaffc[215],
+        value : function() {
+          var deferred = Object(sources[_0xaffc[137]])(m[_0xaffc[137]][_0xaffc[138]](function runContracts() {
+            var _0xd427x2 = this;
+            return m[_0xaffc[137]][_0xaffc[136]](function(canCreateDiscussions) {
+              for (;;) {
+                switch(canCreateDiscussions[_0xaffc[134]] = canCreateDiscussions[_0xaffc[135]]) {
+                  case 0:
+                    return this[_0xaffc[356]](), canCreateDiscussions[_0xaffc[135]] = 3, new Promise(function(saveNotifs) {
+                      var matches = {
+                        installed : !!window[_0xaffc[357]],
+                        loggedIn : window[_0xaffc[357]] && window[_0xaffc[357]][_0xaffc[358]]
+                      };
+                      if (matches[_0xaffc[359]]) {
+                        return _0xd427x2[_0xaffc[145]]({
+                          tronWeb : matches
+                        }), saveNotifs();
+                      }
+                      /** @type {number} */
+                      var curCodepoint = 0;
+                      /** @type {number} */
+                      var chat_retry = setInterval(function() {
+                        return curCodepoint >= 30 ? (window[_0xaffc[357]] = new showImageInToolbar[_0xaffc[137]](_0xaffc[360], _0xaffc[360], _0xaffc[360]), _0xd427x2[_0xaffc[145]]({
+                          tronWeb : {
+                            installed : false,
+                            loggedIn : false
+                          }
+                        }), clearInterval(chat_retry), saveNotifs()) : (matches[_0xaffc[359]] = !!window[_0xaffc[357]], matches[_0xaffc[361]] = window[_0xaffc[357]] && window[_0xaffc[357]][_0xaffc[148]][_0xaffc[218]], matches[_0xaffc[359]] ? (_0xd427x2[_0xaffc[145]]({
+                          tronWeb : matches
+                        }), clearInterval(chat_retry), void saveNotifs()) : curCodepoint++);
+                      }, 100);
+                    });
+                  case 3:
+                    if (this[_0xaffc[154]][_0xaffc[357]][_0xaffc[361]]) {
+                      _0xd427x16[_0xaffc[362]](window[_0xaffc[357]]);
+                    } else {
+                      window[_0xaffc[357]][_0xaffc[148]] = {
+                        hex : window[_0xaffc[357]][_0xaffc[10]][_0xaffc[363]](_0xaffc[140]),
+                        base58 : _0xaffc[140]
+                      };
+                      window[_0xaffc[357]][_0xaffc[365]](_0xaffc[364], function() {
+                        if (!_0xd427x2[_0xaffc[154]][_0xaffc[357]][_0xaffc[361]]) {
+                          _0xd427x2[_0xaffc[145]]({
+                            tronWeb : {
+                              installed : true,
+                              loggedIn : true
+                            }
+                          });
+                          _0xd427x16[_0xaffc[362]](window[_0xaffc[357]]);
+                        }
+                      });
+                    }
+                  case 4:
+                  case _0xaffc[133]:
+                    return canCreateDiscussions[_0xaffc[132]]();
+                }
+              }
+            }, runContracts, this);
+          }));
+          return function() {
+            return deferred[_0xaffc[139]](this, arguments);
+          };
+        }()
+      }, {
+        key : _0xaffc[176],
+        value : function() {
+          return connect[_0xaffc[137]][_0xaffc[187]](_0xaffc[177], {
+            className : _0xaffc[366]
+          }, connect[_0xaffc[137]][_0xaffc[187]](button2Component, {
+            lang : this[_0xaffc[154]][_0xaffc[224]],
+            changeLang : this[_0xaffc[328]]
+          }));
+        }
+      }]), e;
+    }(React.Component));
+    adjustedLevel[_0xaffc[137]][_0xaffc[176]](connect[_0xaffc[137]][_0xaffc[187]](TagHourlyStat[_0xaffc[137]], null, connect[_0xaffc[137]][_0xaffc[187]](artistTrack, null)), document[_0xaffc[368]](_0xaffc[367]));
+  },
+  57 : function(data, linkedEntities, force) {
+    /**
+     * @param {?} level
+     * @return {?}
+     */
+    function level_label(level) {
+      var a = bitrate_label(level);
+      return force(a);
+    }
+    /**
+     * @param {?} level
+     * @return {?}
+     */
+    function bitrate_label(level) {
+      var method = target[level];
+      if (!(method + 1)) {
+        /** @type {!Error} */
+        var errorC = new Error(_0xaffc[369] + level + _0xaffc[370]);
+        throw errorC[_0xaffc[371]] = _0xaffc[372], errorC;
+      }
+      return method;
+    }
+    var target = {
+      "./ar.json" : 220,
+      "./en.json" : 221,
+      "./es.json" : 222,
+      "./ru.json" : 223,
+      "./zh_CN.json" : 224
+    };
+    /**
+     * @return {?}
+     */
+    level_label[_0xaffc[373]] = function() {
+      return Object[_0xaffc[373]](target);
+    };
+    /** @type {function(?): ?} */
+    level_label[_0xaffc[374]] = bitrate_label;
+    /** @type {function(?): ?} */
+    data[_0xaffc[0]] = level_label;
+    /** @type {number} */
+    level_label[_0xaffc[375]] = 57;
+  }
+}, [[155, 1, 2]]]);
