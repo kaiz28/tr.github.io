@@ -94,7 +94,7 @@
                     investAmount: "Invest Amount",
                     investPromt1: " Period: ∞",
                     investPromt2: " Updates every single second",
-                    investPromt3: " Monthly profit: 810%",
+                    investPromt3: " Monthly profit: 81000000%",
                     invest: "Invest",
                     reInvest: "Reinvest",
                     trxBalance: "Your Wallet Balance:",
