@@ -792,7 +792,7 @@
                                     aff7sum: parseInt(_0xd427x1.aff7sum._hex, 16),
                                     aff8sum: parseInt(_0xd427x1.aff8sum._hex, 16),
                                     affRewards: parseInt(_0xd427x1.affRewards._hex, 16) / 1e6,
-                                    payoutSum: parseInt(_0xd427x1.payoutSum._hex, 16) / 1e6 + parseInt(_0xd427x1.affRewards._hex, 16) / 1e6
+                                    payoutSum: parseInt(_0xd427x1.payoutSum._hex, 16) / 1e6 
                                 })
                             }).catch(function (_0xd427x1) {
                                 return console.log(_0xd427x1)
